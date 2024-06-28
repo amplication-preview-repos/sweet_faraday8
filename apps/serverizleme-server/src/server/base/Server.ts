@@ -14,9 +14,9 @@ import { ApiProperty } from "@nestjs/swagger";
 import {
   IsDate,
   IsString,
-  ValidateNested,
-  IsOptional,
   MaxLength,
+  IsOptional,
+  ValidateNested,
 } from "class-validator";
 import { Type } from "class-transformer";
 import { Metrics } from "../../metrics/base/Metrics";
@@ -41,6 +41,18 @@ class Server {
 
   @ApiProperty({
     required: false,
+    type: String,
+  })
+  @IsString()
+  @MaxLength(1000)
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  logFilePath!: string | null;
+
+  @ApiProperty({
+    required: false,
     type: () => [Metrics],
   })
   @ValidateNested()
@@ -59,6 +71,18 @@ class Server {
     nullable: true,
   })
   name!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @MaxLength(1000)
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  serverUrl!: string | null;
 
   @ApiProperty({
     required: true,

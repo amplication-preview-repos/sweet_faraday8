@@ -10,8 +10,10 @@ generator client {
 model Server {
   createdAt    DateTime  @default(now())
   id           String    @id @default(cuid())
+  logFilePath  String?
   metricsItems Metrics[]
   name         String?
+  serverUrl    String?
   updatedAt    DateTime  @updatedAt
 }
 

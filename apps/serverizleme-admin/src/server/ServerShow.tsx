@@ -19,7 +19,9 @@ export const ServerShow = (props: ShowProps): React.ReactElement => {
       <SimpleShowLayout>
         <DateField source="createdAt" label="Created At" />
         <TextField label="ID" source="id" />
+        <TextField label="logFilePath" source="logFilePath" />
         <TextField label="name" source="name" />
+        <TextField label="serverUrl" source="serverUrl" />
         <DateField source="updatedAt" label="Updated At" />
         <ReferenceManyField
           reference="Metrics"

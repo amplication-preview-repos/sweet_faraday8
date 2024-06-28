@@ -11,17 +11,29 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { MetricsUpdateManyWithoutServersInput } from "./MetricsUpdateManyWithoutServersInput";
 import {
-  ValidateNested,
-  IsOptional,
   IsString,
   MaxLength,
+  IsOptional,
+  ValidateNested,
 } from "class-validator";
+import { MetricsUpdateManyWithoutServersInput } from "./MetricsUpdateManyWithoutServersInput";
 import { Type } from "class-transformer";
 
 @InputType()
 class ServerUpdateInput {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @MaxLength(1000)
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  logFilePath?: string | null;
+
   @ApiProperty({
     required: false,
     type: () => MetricsUpdateManyWithoutServersInput,
@@ -45,6 +57,18 @@ class ServerUpdateInput {
     nullable: true,
   })
   name?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @MaxLength(1000)
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  serverUrl?: string | null;
 }
 
 export { ServerUpdateInput as ServerUpdateInput };

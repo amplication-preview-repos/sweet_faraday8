@@ -20,27 +20,35 @@ const existingId = "existingId";
 const CREATE_INPUT = {
   createdAt: new Date(),
   id: "exampleId",
+  logFilePath: "exampleLogFilePath",
   name: "exampleName",
+  serverUrl: "exampleServerUrl",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
   createdAt: new Date(),
   id: "exampleId",
+  logFilePath: "exampleLogFilePath",
   name: "exampleName",
+  serverUrl: "exampleServerUrl",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
     createdAt: new Date(),
     id: "exampleId",
+    logFilePath: "exampleLogFilePath",
     name: "exampleName",
+    serverUrl: "exampleServerUrl",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
   createdAt: new Date(),
   id: "exampleId",
+  logFilePath: "exampleLogFilePath",
   name: "exampleName",
+  serverUrl: "exampleServerUrl",
   updatedAt: new Date(),
 };
 

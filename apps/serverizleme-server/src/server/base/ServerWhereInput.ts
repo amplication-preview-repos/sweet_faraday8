@@ -14,8 +14,8 @@ import { ApiProperty } from "@nestjs/swagger";
 import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
-import { MetricsListRelationFilter } from "../../metrics/base/MetricsListRelationFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { MetricsListRelationFilter } from "../../metrics/base/MetricsListRelationFilter";
 
 @InputType()
 class ServerWhereInput {
@@ -29,6 +29,17 @@ class ServerWhereInput {
     nullable: true,
   })
   id?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  logFilePath?: StringNullableFilter;
 
   @ApiProperty({
     required: false,
@@ -52,6 +63,17 @@ class ServerWhereInput {
     nullable: true,
   })
   name?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  serverUrl?: StringNullableFilter;
 }
 
 export { ServerWhereInput as ServerWhereInput };

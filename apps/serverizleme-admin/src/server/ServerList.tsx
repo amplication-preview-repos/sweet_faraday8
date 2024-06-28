@@ -14,7 +14,9 @@ export const ServerList = (props: ListProps): React.ReactElement => {
       <Datagrid rowClick="show">
         <DateField source="createdAt" label="Created At" />
         <TextField label="ID" source="id" />
+        <TextField label="logFilePath" source="logFilePath" />
         <TextField label="name" source="name" />
+        <TextField label="serverUrl" source="serverUrl" />
         <DateField source="updatedAt" label="Updated At" />
       </Datagrid>
     </List>

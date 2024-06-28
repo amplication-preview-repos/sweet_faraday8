@@ -36,7 +36,9 @@ export class ServerControllerBase {
       select: {
         createdAt: true,
         id: true,
+        logFilePath: true,
         name: true,
+        serverUrl: true,
         updatedAt: true,
       },
     });
@@ -52,7 +54,9 @@ export class ServerControllerBase {
       select: {
         createdAt: true,
         id: true,
+        logFilePath: true,
         name: true,
+        serverUrl: true,
         updatedAt: true,
       },
     });
@@ -69,7 +73,9 @@ export class ServerControllerBase {
       select: {
         createdAt: true,
         id: true,
+        logFilePath: true,
         name: true,
+        serverUrl: true,
         updatedAt: true,
       },
     });
@@ -95,7 +101,9 @@ export class ServerControllerBase {
         select: {
           createdAt: true,
           id: true,
+          logFilePath: true,
           name: true,
+          serverUrl: true,
           updatedAt: true,
         },
       });
@@ -121,7 +129,9 @@ export class ServerControllerBase {
         select: {
           createdAt: true,
           id: true,
+          logFilePath: true,
           name: true,
+          serverUrl: true,
           updatedAt: true,
         },
       });

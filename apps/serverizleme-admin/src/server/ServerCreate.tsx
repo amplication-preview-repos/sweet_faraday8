@@ -4,9 +4,9 @@ import {
   Create,
   SimpleForm,
   CreateProps,
+  TextInput,
   ReferenceArrayInput,
   SelectArrayInput,
-  TextInput,
 } from "react-admin";
 
 import { MetricsTitle } from "../metrics/MetricsTitle";
@@ -15,6 +15,7 @@ export const ServerCreate = (props: CreateProps): React.ReactElement => {
   return (
     <Create {...props}>
       <SimpleForm>
+        <TextInput label="logFilePath" source="logFilePath" />
         <ReferenceArrayInput
           source="metricsItems"
           reference="Metrics"
@@ -24,6 +25,7 @@ export const ServerCreate = (props: CreateProps): React.ReactElement => {
           <SelectArrayInput optionText={MetricsTitle} />
         </ReferenceArrayInput>
         <TextInput label="name" source="name" />
+        <TextInput label="serverUrl" source="serverUrl" />
       </SimpleForm>
     </Create>
   );
