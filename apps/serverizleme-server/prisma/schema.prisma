@@ -1,0 +1,33 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Server {
+  createdAt    DateTime  @default(now())
+  id           String    @id @default(cuid())
+  logFilePath  String?
+  metricsItems Metrics[]
+  name         String?
+  serverUrl    String?
+  updatedAt    DateTime  @updatedAt
+}
+
+model Metrics {
+  cpuPercentage Float?
+  cpuUsage      Float?
+  createdAt     DateTime  @default(now())
+  dateTime      DateTime?
+  id            String    @id @default(cuid())
+  numberOfUsers Int?
+  outboundGb    Float?
+  ramPercentage Float?
+  server        Server?   @relation(fields: [serverId], references: [id])
+  serverId      String?
+  updatedAt     DateTime  @updatedAt
+  usedRam       Float?
+}
